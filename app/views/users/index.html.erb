@@ -1,5 +1,6 @@
 
-<% @users.all.each do |users| %>
- <%= users.firstName %>
-  <%= users.lastName %>
+<% @users.each do |user| %>
+ <%= user.firstName %>
+  <%= user.lastName %><br/>
  <%end%>
+ 
