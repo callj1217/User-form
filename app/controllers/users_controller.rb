@@ -24,10 +24,28 @@
 				redirect_to users_path(@user)
 			end
 		end
-
+		def edit
+			@user = User.find (params[:id]) 
+			puts"--------------------- lal la la the id is : #{params[:id]}  " 
+		end
+		def update
+			@user = User.find(params[:id]) 
+			if @user.update_attributes(user_params)
+				redirect_to users_path(@user)
+			end
+		end
 private
 
 		def user_params 
 			params.required(:user).permit(:firstName, :lastName)
 		end
+
+
+
+		# def update
+		# 	@user = User.find(params[:id]) 
+		# 	if @user.update_attributes(user_params)
+		# 		redirect_to users_path(@user)
+		# 	end
+		# end
 	end

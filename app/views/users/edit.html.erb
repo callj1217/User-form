@@ -1,0 +1,9 @@
+<%=	form_for @user do |f| -%>
+	Firstname: <%= f.text_field :firstName %><br />
+	Lastname: <%= f.text_field :lastName %><br />
+	<%= f.submit %>
+<% end %>
+
+
+
+<%= link_to "back", action: "index" %>
