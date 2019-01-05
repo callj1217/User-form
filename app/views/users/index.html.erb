@@ -1,10 +1,17 @@
-
-<% @users.each do |user| %>
- <%= user.firstName %>
-  <%= user.lastName %><br/>
- <%end%>
- <%= link_to "New", action: "new" %>
- <form method="post" action="/users/new" class="button_to">
-</form>
-
- 
+<h1>Users</h1>
+<table style = "border: 1px solid black">
+	<tr>
+		<th>Firstname</th>
+		<th>Lastname</th>
+	</tr>
+	<% @users.each do |user| %>
+		<tr>
+ 			<td style = "border: 1px solid black"><%= user.firstName %></td>
+  			<td style = "border: 1px solid black"><%= user.lastName %></td>
+  			<td><%= link_to "Edit", edit_user_path(user)%></td>
+			<td><%= link_to "Delete", user , :method => 'delete' %></td>
+  		<tr>
+ 	<%end%>
+ </table>
+ <%= link_to "Cars", cars_path%>
+<%= link_to "New", action: "new" %>
