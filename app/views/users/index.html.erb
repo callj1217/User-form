@@ -1,17 +1,25 @@
 <h1>Users</h1>
+
+<ul class="nav">
+	<li> <%= link_to "Cars", cars_path%><li>
+	<li> <%= link_to "Users", users_path%><li>	
+</ul>
+
 <table style = "border: 1px solid black">
 	<tr>
 		<th>Firstname</th>
 		<th>Lastname</th>
+		<th>Birthday</th>
 	</tr>
 	<% @users.each do |user| %>
 		<tr>
  			<td style = "border: 1px solid black"><%= user.firstName %></td>
   			<td style = "border: 1px solid black"><%= user.lastName %></td>
-  			<td><%= link_to "Edit", edit_user_path(user)%></td>
-			<td><%= link_to "Delete", user , :method => 'delete' %></td>
+  			<td style = "border: 1px solid black"><%= user.birth %></td>
+  			<td><%= link_to "Edit", edit_user_path(user), :class => "button edit"%></td>
+			<td><%= link_to "Delete", user , :method => 'delete',  :class => "button delete"%></td>
   		<tr>
  	<%end%>
  </table>
- <%= link_to "Cars", cars_path%>
+ 
 <%= link_to "New", action: "new" %>

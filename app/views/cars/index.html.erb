@@ -1,5 +1,11 @@
 <h1>Cars</h1>
+<ul class="nav">
+	<li> <%= link_to "Cars", cars_path%><li>
+	<li> <li> <%= link_to "Users", users_path%><li><li>	
+</ul>
+
 <table style = "border: 1px solid black">
+
 	<tr>
 		<th>Brand</th>
 		<th>Model</th>
@@ -8,10 +14,10 @@
 		<tr>
  			<td style = "border: 1px solid black"><%= car.brand %></td>
   			<td style = "border: 1px solid black"><%= car.model %></td>
-  			<td><%= link_to "Edit", edit_car_path(car)%></td>
-			<td><%= link_to "Delete", car , :method => 'delete' %></td>
+  			<td><%= link_to "Edit", edit_car_path(car), :class => 'button edit' %></td>
+			<td><%= link_to "Delete", car , :method => 'delete', :class => 'button delete' %></td>
   		<tr>
  	<%end%>
  </table>
- <%= link_to "New", action: "new" %>
- <%= link_to "Users", users_path%>
+ <%= link_to "New", action: "new", :class => 'button new' %>
+ 

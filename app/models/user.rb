@@ -1,6 +1,7 @@
 class User < ApplicationRecord
-
-  def full_name
-    "#{firstName} #{lastName}"
+ has_one :car
+  def user_data
+    "#{firstName} #{lastName} #{birth}"
+   
   end
 end

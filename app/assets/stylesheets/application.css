@@ -1,0 +1,134 @@
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even){background-color: bd4e4e; color: white;}
+
+th {
+  background-color: #bd4e4e;
+  color: white;
+}
+
+body {
+	 background-image: linear-gradient(to right, rgba(10000,2,0,6), rgba(10,3,6,7));
+
+
+}
+
+
+.nav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #AA3939;
+  margin: 20px;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+  background-color: #111;
+}
+
+/* --------------------------create button*/
+.button {
+  display: inline-block;
+  border-radius: 25px;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.new {
+	background-color: #bce0ee;
+	
+}
+.new span:after{
+	content: '\00bb';
+}
+
+.edit {
+	background-color:  #207ce5;
+}
+.edit span:after{
+	content: '\00b1';
+}
+
+.delete {
+	background-color: #e73827;
+}
+
+.delete span:after{
+	content: '\03C7';
+}
+
+.back {
+	background-color: #ffaf4b;
+}
+
+.back span:after{
+	content: ' \2039-';
+}
+
+.create {
+	background-color: #75890c;
+}
+
+.create span:after{
+	content: '+';
+}
+
+.update {
+	background-color: #ffc500;
+}
+
+.update span:after{
+	content: '\039b';

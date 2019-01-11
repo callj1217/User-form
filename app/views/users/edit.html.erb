@@ -1,6 +1,7 @@
 <%=	form_for @user do |f| -%>
 	Firstname: <%= f.text_field :firstName %><br />
 	Lastname: <%= f.text_field :lastName %><br />
+	Birth: <%= f.date_field :birth %><br />
 	<%= f.submit %>
 <% end %>
 
