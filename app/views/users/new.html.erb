@@ -1,6 +1,6 @@
 <%=	form_for @user do |user| -%>
-	Firstname: <%= user.text_field :firstName %><br />
-	Lastname: <%= user.text_field :lastName %><br />
+	first_name: <%= user.text_field :first_name %><br />
+	last_name: <%= user.text_field :last_name %><br />
 	Birth: <%= user.date_field :birth %><br />
 	<%= user.submit %>
 	<% end %>
