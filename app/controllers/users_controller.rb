@@ -2,6 +2,7 @@
 
 		def index
 			@users = User.all
+			@car = Car.find_by(params[:id])
 		end
 
 		def show

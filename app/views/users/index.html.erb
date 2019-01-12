@@ -10,12 +10,14 @@
 		<th>Firstname</th>
 		<th>Lastname</th>
 		<th>Birthday</th>
+		<th>Brand</th>
 	</tr>
 	<% @users.each do |user| %>
 		<tr>
  			<td style = "border: 1px solid black"><%= user.firstName %></td>
   			<td style = "border: 1px solid black"><%= user.lastName %></td>
   			<td style = "border: 1px solid black"><%= user.birth %></td>
+  			<td style = "border: 1px solid black"><%=link_to user&.car&.brand, car_path(@car)%></td>
   			<td><%= link_to "Edit", edit_user_path(user), :class => "button edit"%></td>
 			<td><%= link_to "Delete", user , :method => 'delete',  :class => "button delete"%></td>
   		<tr>
