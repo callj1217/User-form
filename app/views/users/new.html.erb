@@ -2,6 +2,7 @@
 	first_name: <%= user.text_field :first_name %><br />
 	last_name: <%= user.text_field :last_name %><br />
 	Birth: <%= user.date_field :birth %><br />
+	Birth: <%= user.num_field :sibilings %><br />
 	<%= user.submit %>
 	<% end %>
 	 <%= link_to "back", action: "index" %>

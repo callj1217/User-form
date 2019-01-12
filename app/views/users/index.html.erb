@@ -17,6 +17,7 @@
  			<td style = "border: 1px solid black"><%= user.first_name %></td>
   			<td style = "border: 1px solid black"><%= user.last_name %></td>
   			<td style = "border: 1px solid black"><%= user.birth %></td>
+  			<td style = "border: 1px solid black"><%= user.sibilings %></td>
   			<td style = "border: 1px solid black"><%= link_to user&.car&.brand, car_path(user.car) if user.car%></td>
   			<td><%= link_to "Edit", edit_user_path(user), :class => "button edit"%></td>
 			<td><%= link_to "Delete", user , :method => 'delete',  :class => "button delete"%></td>

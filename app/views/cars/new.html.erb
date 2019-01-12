@@ -1,6 +1,7 @@
 <%=	form_for @car do |car| -%>
 	Brand: <%= car.text_field :brand %><br />
 	Model: <%= car.text_field :model %><br />
+	Number of Wheels: <%= car.integer :wheels %><br />
 	<%= car.submit %>
 	<% end %>
 	 <%= link_to "back", action: "index", :class => 'button back' %>
