@@ -18,10 +18,18 @@
   			<td style = "border: 1px solid black"><%= user.last_name %></td>
   			<td style = "border: 1px solid black"><%= user.birth %></td>
   			<td style = "border: 1px solid black"><%= link_to user&.car&.brand, car_path(user.car) if user.car%></td>
-  			<td><%= link_to "Edit", edit_user_path(user), :class => "button edit"%></td>
-			<td><%= link_to "Delete", user , :method => 'delete',  :class => "button delete"%></td>
+  			<td><%= link_to "Edit", edit_user_path(user), :class => "button edit btn btn-2"%></td>
+			<td><%= link_to "Delete", user , :method => 'delete',  :class => "button delete btn btn-2"%></td>
   		<tr>
  	<%end%>
  </table>
- 
-<%= link_to "New", action: "new" %>
+
+
+
+
+
+
+
+
+
+<%= link_to "New", new_car_path, :class => 'button new btn btn-2' %>
