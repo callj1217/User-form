@@ -44,7 +44,7 @@
 private
 
 		def user_params 
-			params.required(:user).permit(:first_name, :last_name, :birth)
+			params.required(:user).permit(:first_name, :last_name, :birth, :num_siblings, :shoe_size, :us_citizen)
 		end
 
 	end

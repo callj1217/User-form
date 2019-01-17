@@ -3,6 +3,8 @@
 	Model: <%= car.text_field :model %><br />
 	Is your car electric: <%= car.check_box :is_eletric %><br />
 	Number of Wheels: <%= car.number_field :num_wheels %><br />
+	Engine Size: <%= car.number_field :engine_size, step: 0.5 %><br />
+	Date of Purchase: <%= car.date_field :date_purchased %><br />
 	<%= car.submit %>
 	<% end %>
 	 <%= link_to "back", action: "index" %>

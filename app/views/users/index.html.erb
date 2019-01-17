@@ -7,17 +7,22 @@
 
 <table style = "border: 1px solid black">
 	<tr>
-		<th>first_name</th>
-		<th>last_name</th>
+		<th>First Name</th>
+		<th>Last Name</th>
 		<th>Birthday</th>
-		<th>Brand</th>
+		<th>Shoe Size</th>
+		<th>Number of Sibilings</th>
+		<th>US Citizen</th>
+		<th>Car</th>
 	</tr>
 	<% @users.each do |user| %>
 		<tr>
  			<td style = "border: 1px solid black"><%= user.first_name %></td>
   			<td style = "border: 1px solid black"><%= user.last_name %></td>
   			<td style = "border: 1px solid black"><%= user.birth %></td>
+  			<td style = "border: 1px solid black"><%= user.shoe_size %></td>
   			<td style = "border: 1px solid black"><%= user.num_siblings %></td>
+  			<td style = "border: 1px solid black"><%= user.print_yes_or_no(user.us_citizen) %></td>
   			<td style = "border: 1px solid black"><%= link_to user&.car&.brand, car_path(user.car) if user.car%></td>
   			<td><%= link_to "Edit", edit_user_path(user), :class => "button edit"%></td>
 			<td><%= link_to "Delete", user , :method => 'delete',  :class => "button delete"%></td>

@@ -10,6 +10,8 @@
 		<th>Brand</th>
 		<th>Model</th>
 		<th>Number of Wheels</th>
+		<th>Engine Size</th>
+		<th>Date of Purchase</th>
 		<th>Car electric</th>
 		<th>User</th>
 	</tr>
@@ -18,7 +20,9 @@
  			<td style = "border: 1px solid black"><%= car.brand %></td>
   			<td style = "border: 1px solid black"><%= car.model %></td>
   			<td style = "border: 1px solid black"><%= car.num_wheels %></td>
-  			<td style = "border: 1px solid black"><%= car.is_eletric %></td>
+  			<td style = "border: 1px solid black"><%= car.engine_size %></td>
+  			<td style = "border: 1px solid black"><%= car.date_purchased %></td>
+  			<td style = "border: 1px solid black"><%= car.print_yes_or_no(car.is_eletric) %></td>
   			<td style = "border: 1px solid black"><%= link_to car&.user&.first_name, user_path(car.user) if car.user %></td>
   			<td><%= link_to "Edit", edit_car_path(car), :class => 'button edit' %></td>
 			<td><%= link_to "Delete", car , :method => 'delete', :class => 'button delete' %></td>

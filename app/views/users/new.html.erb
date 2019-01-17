@@ -1,8 +1,10 @@
 <%=	form_for @user do |user| -%>
-	first_name: <%= user.text_field :first_name %><br />
-	last_name: <%= user.text_field :last_name %><br />
+	First Name: <%= user.text_field :first_name %><br />
+	Last Name: <%= user.text_field :last_name %><br />
 	Birth: <%= user.date_field :birth %><br />
-	Birth: <%= user.num_field :sibilings %><br />
+	Shoe Size: <%= user.number_field :shoe_size, step: 0.5 %><br />
+	Number of Sibilings: <%= user.num_field :num_siblings %><br />
+	Are You a US Citizen: <%= user.check_box :us_citizen %><br />
 	<%= user.submit %>
 	<% end %>
 	 <%= link_to "back", action: "index" %>
