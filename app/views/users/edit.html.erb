@@ -1,7 +1,15 @@
 <%=	form_for @user do |f| -%>
+<<<<<<< HEAD
 	first_name: <%= f.text_field :first_name%><br />
 	last_name: <%= f.text_field :last_name %><br />
+=======
+	First Name: <%= f.text_field :first_name %><br />
+	Last Name: <%= f.text_field :last_name %><br />
+>>>>>>> eb67559a23215dbb64625444cfd297b3f8ae2786
 	Birth: <%= f.date_field :birth %><br />
+	Shoe Size: <%= f.number_field :shoe_size, step: 0.5 %><br />
+	Number of Sibilings: <%= f.number_field :num_siblings %><br />
+	Are You a US Citizen: <%= f.check_box :us_citizen %><br />
 	<%= f.submit %>
 <% end %>
 
