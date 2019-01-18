@@ -17,17 +17,12 @@ ActiveRecord::Schema.define(version: 20190112173858) do
     t.string "model"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "users_id"
     t.integer "user_id"
-    t.integer "wheels"
-    t.float "engine_type"
-    t.boolean "eletric"
     t.integer "num_wheels"
     t.float "engine_size"
     t.boolean "is_eletric"
     t.datetime "date_purchased"
     t.index ["user_id"], name: "index_cars_on_user_id"
-    t.index ["users_id"], name: "index_cars_on_users_id"
   end
 
   create_table "users", force: :cascade do |t|
