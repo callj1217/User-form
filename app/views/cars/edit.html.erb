@@ -1,10 +1,10 @@
-<%=	form_for @car do |car| -%>
-	Brand: <%= car.text_field :brand %><br />
-	Model: <%= car.text_field :model %><br />
-	Is your car electric: <%= car.check_box :is_eletric %><br />
-	Number of Wheels: <%= car.number_field :num_wheels %><br />
-	Engine Size: <%= car.number_field :engine_size, step: 0.5 %><br />
-	Date of Purchase: <%= car.date_field :date_purchased %><br />
-	<%= car.submit %>
+<%=	form_for @car do |f| -%>
+	Brand: <%= f.select :brand, ['Honda', 'Tesla', 'Toyota', 'Ford', 'Mazda', 'Nissan' 'RAM'] %><br />
+	Model: <%= f.text_field :model %><br />
+	Number of Wheels: <%= f.number_field :num_wheels %><br />
+	Engine Size: <%= f.number_field :engine_size, step: 0.5 %><br />
+	Is your car electric: <%= f.check_box :is_eletric %><br />
+	Date of Purchase: <%= f.date_field :date_purchased %><br />
+	<%= f.submit %>
 	<% end %>
-	 <%= link_to "back", action: "index" %>
+	 <%= link_to "back", action: "index", :class => 'button back' %>
