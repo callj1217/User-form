@@ -5,8 +5,7 @@
 		end
 
 		def show
-			@users = User.all
-			@user = User.find_by(params[:id])
+			@user = User.find(params[:id])
 		end
 
 

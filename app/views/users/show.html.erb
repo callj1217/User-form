@@ -1,2 +1,37 @@
-<%= @user.user_data%>
+<table style = "border: 1px solid black">
+	  		<tr>
+	  		<td>Id</td>
+	  		<td style = "border: 1px solid black"><%=@user.id%></td>
+	  		</tr>	
 
+	  		<tr>
+	  		<td>First Name</td>
+	  		<td style = "border: 1px solid black"><%=@user.first_name%></td>
+	  		</tr>	
+
+	  		<tr>
+	  		<td>Last Name</td>
+	  		<td style = "border: 1px solid black"><%=@user.last_name%></td>
+	  		</tr>	
+
+	  		<tr>
+	  		<td>Birthday</td>
+	  		<td style = "border: 1px solid black"><%=@user.birth&.strftime("%m/%d/%Y")%></td>
+	  		</tr>	
+
+	  		<tr>
+	  		<td>Shoe Size</td>
+	  		<td style = "border: 1px solid black"><%=@user.shoe_size%></td>
+	  		</tr>	
+
+	  		<tr>
+	  		<td>Number of Siblings</td>
+	  		<td style = "border: 1px solid black"><%=@user.num_siblings%></td>
+	  		</tr>	
+
+	  		<tr>
+	  		<td>US Citizen</td>
+	  		<td style = "border: 1px solid black"><%=@user.us_citizen%></td>
+	  		</tr>	
+ </table>
+ 

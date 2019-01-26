@@ -1,1 +1,38 @@
-<%=@car.brand%>
+<div>
+<table style = "border: 1px solid black">
+	  		<tr>
+	  		<td>Id</td>
+	  		<td style = "border: 1px solid black"><%=@car.id%></td>
+	  		</tr>	
+
+	  		<tr>
+	  		<td>Brand</td>
+	  		<td style = "border: 1px solid black"><%=@car.brand%></td>
+	  		</tr>	
+
+	  		<tr>
+	  		<td>Model</td>
+	  		<td style = "border: 1px solid black"><%=@car.model%></td>
+	  		</tr>	
+
+	  		<tr>
+	  		<td>Date Purchased</td>
+	  		<td style = "border: 1px solid black"><%=@car.date_purchased&.strftime("%m/%d/%Y")%></td>
+	  		</tr>	
+
+	  		<tr>
+	  		<td>Engine Size</td>
+	  		<td style = "border: 1px solid black"><%=@car.engine_size%></td>
+	  		</tr>	
+
+	  		<tr>
+	  		<td>Number of Wheels</td>
+	  		<td style = "border: 1px solid black"><%=@car.num_wheels%></td>
+	  		</tr>	
+
+	  		<tr>
+	  		<td>Is Your Car Electric</td>
+	  		<td style = "border: 1px solid black"><%=@car.is_eletric%></td>
+	  		</tr>	
+ </table>
+</div>

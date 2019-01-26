@@ -5,6 +5,7 @@
 	Engine Size: <%= f.number_field :engine_size, step: 0.5 %><br />
 	Is your car electric: <%= f.check_box :is_eletric %><br />
 	Date of Purchase: <%= f.date_field :date_purchased %><br />
+	User of Car: <%= f.number_field :user_id %><br />
 	<%= f.submit %>
 	<% end %>
 	 <%= link_to "back", action: "index", :class => 'button back' %>

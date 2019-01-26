@@ -5,8 +5,7 @@ class CarsController < ApplicationController
 		end
 
 		def show
-			@cars = Car.all
-			@car = Car.find_by(params[:id])
+			@car = Car.find(params[:id])
 		end
 
 
@@ -44,7 +43,7 @@ class CarsController < ApplicationController
 private
 
 		def car_params 
-			params.required(:car).permit(:brand, :model, :num_wheels, :is_eletric, :engine_size, :date_purchased)
+			params.required(:car).permit(:brand, :model, :num_wheels, :is_eletric, :engine_size, :date_purchased, :user_id)
 		end
 
 	end

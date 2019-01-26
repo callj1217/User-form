@@ -3,7 +3,7 @@
 	Last Name: <%= user.text_field :last_name %><br />
 	Birth: <%= user.date_field :birth %><br />
 	Shoe Size: <%= user.number_field :shoe_size, step: 0.5 %><br />
-	Number of Sibilings: <%= user.num_field :num_siblings %><br />
+	Number of Sibilings: <%= user.number_field :num_siblings %><br />
 	Are You a US Citizen: <%= user.check_box :us_citizen %><br />
 	<%= user.submit %>
 	<% end %>
