@@ -5,7 +5,7 @@
 	<li> <%= link_to "Users", users_path%><li>	
 </ul>
 
-<table style = "border: 1px solid black">
+<table class="table">
 	<tr>
 		<th>Id</th>
 		<th>First Name</th>
@@ -21,14 +21,14 @@
 			<td style = "border: 1px solid black"><%= user.id %></td>
  			<td style = "border: 1px solid black"><%= user.first_name %></td>
   			<td style = "border: 1px solid black"><%= user.last_name %></td>
-  			<td style = "border: 1px solid black"><%= user.birth %></td>
+  			<td style = "border: 1px solid black"><%= user.birth&.strftime("%m/%d/%Y") %></td>
   			<td style = "border: 1px solid black"><%= user.shoe_size %></td>
   			<td style = "border: 1px solid black"><%= user.num_siblings %></td>
   			<td style = "border: 1px solid black"><%= user.print_yes_or_no(user.us_citizen) %></td>
   			<td style = "border: 1px solid black"><%= link_to user&.car&.brand, car_path(user.car) if user.car%></td>
   			<td><%= link_to "Edit", edit_user_path(user), :class => "button edit btn btn-2"%></td>
-			<td><%= link_to "Delete", user , :method => 'delete',  :class => "button delete btn btn-2", data: {confirm: "Are you sure?"}%></td>
+			<td><%= link_to "Delete", user , class: "btn btn-danger", :method => 'delete', data: {confirm: "Are you sure?"}%></td>
   		<tr>
  	<%end%>
  </table>
- <%= link_to "New", new_user_path, :class => 'button new btn btn-2' %>
+ <%= link_to "New", new_user_path, class: 'btn btn-success' %>
