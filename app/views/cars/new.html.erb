@@ -1,11 +1,70 @@
-<%=	form_for @car do |f| -%>
-	Brand: <%= f.select :brand, ['', 'Honda', 'Tesla', 'Toyota', 'Ford', 'Mazda', 'Nissan', 'RAM'] %><br />
-	Model: <%= f.text_field :model %><br />
-	Number of Wheels: <%= f.number_field :num_wheels %><br />
-	Engine Size: <%= f.number_field :engine_size, step: 0.5 %><br />
-	Is your car electric: <%= f.check_box :is_eletric %><br />
-	Date of Purchase: <%= f.date_field :date_purchased %><br />
-	User of Car: <%= f.number_field :user_id %><br />
-	<%= f.submit %>
-	<% end %>
-	 <%= link_to "back", action: "index", :class => 'button back btn btn-danger' %>
+
+<div class='col-md-6 col-md-offset-3'>
+	<%=	form_for @car do |f| %>
+
+		<div class="form-group">
+			<div class='col-md-3'>
+				<label>Brand</label>
+			</div>
+			<div class='col-md-9'>
+				<%= f.select :brand, ['', 'Honda', 'Tesla', 'Toyota', 'Ford', 'Mazda', 'Nissan', 'RAM'],  {},class: 'form-control' %><br>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<div class='col-md-3'>
+				<label>Model</label>
+			</div>
+			<div class='col-md-9'>
+				<%= f.text_field :model, class: 'form-control' %><br>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class='col-md-3'>
+				<label>Number of Wheels</label>
+			</div>
+			<div class='col-md-9'>
+				<%= f.text_field :num_wheels, class: 'form-control' %><br>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class='col-md-3'>
+				<label>Engine Size</label>
+			</div>
+			<div class='col-md-9'>
+				<%= f.number_field :engine_size, step: 0.5, class: 'form-control' %><br>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class='col-md-3'>
+				<label>Is your car electric?</label>
+			</div>
+			<div class='col-md-9'>
+				<%= f.check_box :is_eletric, class: 'form-control' %><br>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class='col-md-3'>
+				<label>Date purchased</label>
+			</div>
+			<div class='col-md-9'>
+				<%= f.date_field :date_purchased, class: 'form-control' %><br>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class='col-md-3'>
+				<label>Owner user id</label>
+			</div>
+			<div class='col-md-9'>
+				<%= f.number_field :user_id, class: 'form-control' %><br>
+			</div>
+		</div>
+		<div class="form-group">
+				<%= f.submit 'Create', class: "btn btn-primary" %><br>
+		</div>
+
+<%= link_to "back", cars_path, :class => 'btn btn-primary' %>
+<% end %>
+</div>
+	
+	
