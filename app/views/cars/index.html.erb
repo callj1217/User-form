@@ -4,30 +4,33 @@
 	<li> <li> <%= link_to "Users", users_path%><li><li>	
 </ul>
 
-<table style = "border: 1px solid black">
+<table class="table">
 
 	<tr>
-		<th>Id</th>
-		<th>Brand</th>
-		<th>Model</th>
-		<th>Number of Wheels</th>
-		<th>Engine Size</th>
-		<th>Date of Purchase</th>
-		<th>Car electric</th>
-		<th>User</th>
+		<th scope="col">Id</th>
+		<th scope="col">Brand</th>
+		<th scope="col">Model</th>
+		<th scope="col">Number of Wheels</th>
+		<th scope="col">Engine Size</th>
+		<th scope="col">Date of Purchase</th>
+		<th scope="col">Car electric</th>
+		<th scope="col">User</th>
+		<th scope="col"></th>
+		<th scope="col"></th>
+
 	</tr>
 	<% @cars.each do |car| %>
 		<tr>
-			<td style = "border: 1px solid black"><%= car.id %></td>
- 			<td style = "border: 1px solid black"><%= car.brand %></td>
-  			<td style = "border: 1px solid black"><%= car.model %></td>
-  			<td style = "border: 1px solid black"><%= car.num_wheels %></td>
-  			<td style = "border: 1px solid black"><%= car.engine_size %></td>
-  			<td style = "border: 1px solid black"><%= car.date_purchased&.strftime("%m/%d/%Y") %></td>
-  			<td style = "border: 1px solid black"><%= car.print_yes_or_no(car.is_eletric) %></td>
-  			<td style = "border: 1px solid black"><%= link_to car&.user&.first_name, user_path(car.user) if car.user %></td>
-  			<td><%= link_to "Edit", edit_car_path(car), :class => 'button edit btn btn-2' %></td>
-			<td><%= link_to "Delete", car , :method => 'delete', :class => 'button delete btn btn-2', data: {confirm: "Are you sure?"} %></td>
+			<td><%= car.id %></td>
+ 			<td><%= car.brand %></td>
+  			<td><%= car.model %></td>
+  			<td><%= car.num_wheels %></td>
+  			<td><%= car.engine_size %></td>
+  			<td><%= car.date_purchased&.strftime("%m/%d/%Y") %></td>
+  			<td><%= car.print_yes_or_no(car.is_eletric) %></td>
+  			<td><%= link_to car&.user&.first_name, user_path(car.user) if car.user %></td>
+  			<td><%= link_to "Edit", edit_car_path(car), :class => ' btn btn-primary' %></td>
+			<td><%= link_to "Delete", car , :method => 'delete', :class => 'btn btn-danger', data: {confirm: "Are you sure?"} %></td>
   		<tr>
  	<%end%>
  </table>

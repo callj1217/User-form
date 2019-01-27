@@ -7,26 +7,26 @@
 
 <table class="table">
 	<tr>
-		<th>Id</th>
-		<th>First Name</th>
-		<th>Last Name</th>
-		<th>Birthday</th>
-		<th>Shoe Size</th>
-		<th>Number of Sibilings</th>
-		<th>US Citizen</th>
-		<th>Car</th>
+		<th scope="col">Id</th>
+		<th scope="col">First Name</th>
+		<th scope="col">Last Name</th>
+		<th scope="col">Birthday</th>
+		<th scope="col">Shoe Size</th>
+		<th scope="col">Number of Sibilings</th>
+		<th scope="col">US Citizen</th>
+		<th scope="col">Car</th>
 	</tr>
 	<% @users.each do |user| %>
 		<tr>
-			<td style = "border: 1px solid black"><%= user.id %></td>
- 			<td style = "border: 1px solid black"><%= user.first_name %></td>
-  			<td style = "border: 1px solid black"><%= user.last_name %></td>
-  			<td style = "border: 1px solid black"><%= user.birth&.strftime("%m/%d/%Y") %></td>
-  			<td style = "border: 1px solid black"><%= user.shoe_size %></td>
-  			<td style = "border: 1px solid black"><%= user.num_siblings %></td>
-  			<td style = "border: 1px solid black"><%= user.print_yes_or_no(user.us_citizen) %></td>
-  			<td style = "border: 1px solid black"><%= link_to user&.car&.brand, car_path(user.car) if user.car%></td>
-  			<td><%= link_to "Edit", edit_user_path(user), :class => "button edit btn btn-2"%></td>
+			<td><%= user.id %></td>
+ 			<td><%= user.first_name %></td>
+  			<td><%= user.last_name %></td>
+  			<td><%= user.birth&.strftime("%m/%d/%Y") %></td>
+  			<td><%= user.shoe_size %></td>
+  			<td><%= user.num_siblings %></td>
+  			<td><%= user.print_yes_or_no(user.us_citizen) %></td>
+  			<td><%= link_to user&.car&.brand, car_path(user.car) if user.car%></td>
+  			<td><%= link_to "Edit", edit_user_path(user), :class => "btn btn-primary"%></td>
 			<td><%= link_to "Delete", user , class: "btn btn-danger", :method => 'delete', data: {confirm: "Are you sure?"}%></td>
   		<tr>
  	<%end%>
