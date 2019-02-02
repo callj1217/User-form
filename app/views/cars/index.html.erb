@@ -24,7 +24,15 @@
   			<td><%= car.engine_size %></td>
   			<td><%= car.date_purchased&.strftime("%m/%d/%Y") %></td>
   			<td><%= car.print_yes_or_no(car.is_eletric) %></td>
-  			<td><%= link_to car&.user&.first_name, user_path(car.user) if car.user %></td>
+
+  			<% if car.user%>
+  				<td><%= link_to car.user_display, user_path(car.user)%></td>
+  			<% else%>
+  				<td>"No owner"</td>
+  			<% end%>
+  			
+
+
   			<td><%= link_to "Edit", edit_car_path(car), :class => ' btn btn-primary' %></td>
 			<td><%= link_to "Delete", car , :method => 'delete', :class => 'btn btn-danger', data: {confirm: "Are you sure?"} %></td>
   		<tr>

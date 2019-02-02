@@ -1,13 +1,59 @@
-<%=	form_for @user do |f| -%>
-	First Name: <%= f.text_field :first_name %><br />
-	Last Name: <%= f.text_field :last_name %><br />
-	Birth: <%= f.date_field :birth %><br />
-	Shoe Size: <%= f.number_field :shoe_size, step: 0.5 %><br />
-	Number of Sibilings: <%= f.number_field :num_siblings %><br />
-	Are You a US Citizen: <%= f.check_box :us_citizen %><br />
-	<%= f.submit %>
+<div class='col-md-6 col-md-offset-3'>
+	<%=	form_for @user do |f| %>
+
+		<div class="form-group">
+			<div class='col-md-3'>
+				<label>First Name</label>
+			</div>
+			<div class='col-md-9'>
+				<%= f.text_field :first_name, class: 'form-control' %><br>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<div class='col-md-3'>
+				<label>Last Name</label>
+			</div>
+			<div class='col-md-9'>
+				<%= f.text_field :last_name, class: 'form-control' %><br>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class='col-md-3'>
+				<label>Number of Sibilings</label>
+			</div>
+			<div class='col-md-9'>
+				<%= f.number_field :num_siblings, class: 'form-control' %><br>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class='col-md-3'>
+				<label>Shoe Size</label>
+			</div>
+			<div class='col-md-9'>
+				<%= f.number_field :shoe_size, step: 0.5, class: 'form-control' %><br>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class='col-md-3'>
+				<label>Are you a U.S. citizen?</label>
+			</div>
+			<div class='col-md-9'>
+				<%= f.check_box :us_citizen, class: 'form-control' %><br>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class='col-md-3'>
+				<label>Date of birth</label>
+			</div>
+			<div class='col-md-9'>
+				<%= f.date_field :birth, class: 'form-control' %><br>
+			</div>
+		</div>
+		<div class="form-group">
+				<%= f.submit 'Create', class: "btn btn-success" %><br>
+		</div>
+
+<%= link_to "back", users_path, :class => 'btn btn-danger' %>
 <% end %>
-
-
-
-<%= link_to "back", action: "index" %>
+</div>

@@ -20,7 +20,7 @@
   			<td><%= user.shoe_size %></td>
   			<td><%= user.num_siblings %></td>
   			<td><%= user.print_yes_or_no(user.us_citizen) %></td>
-  			<td><%= link_to user&.car&.brand, car_path(user.car) if user.car%></td>
+  			<td><%= link_to user.car_display, car_path(user.car) if user.car%></td>
   			<td><%= link_to "Edit", edit_user_path(user), :class => "btn btn-primary"%></td>
 			<td><%= link_to "Delete", user , class: "btn btn-danger", :method => 'delete', data: {confirm: "Are you sure?"}%></td>
   		<tr>
