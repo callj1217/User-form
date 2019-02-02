@@ -56,11 +56,11 @@
 				<label>Owner user id</label>
 			</div>
 			<div class='col-md-9'>
-				<%= f.number_field :user_id, class: 'form-control' %><br>
+				<%= f.select :user_id, @car.owner_select_options ,  class: 'form-control' %><br>
 			</div>
 		</div>
 		<div class="form-group">
-				<%= f.submit 'edit', class: "btn btn-success" %><br>
+				<%= f.submit 'Edit', class: "btn btn-success" %><br>
 		</div>
 
 <%= link_to "back", cars_path, :class => 'btn btn-danger' %>

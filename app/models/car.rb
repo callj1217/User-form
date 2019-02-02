@@ -15,9 +15,18 @@ belongs_to :user, optional: true
   def print_yes_or_no(boolean)
   	if boolean
   		"Yes"
-	else
-		"No"
-	end
+  	else
+  		"No"
+  	end
+  end
+
+
+  def owner_select_options
+    options_array = ['']
+    User.all.each do |person|
+      options_array << [person.full_name, person.id]
+    end
+    options_array
   end
 end
 

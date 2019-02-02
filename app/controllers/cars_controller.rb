@@ -11,6 +11,7 @@ class CarsController < ApplicationController
 
 		def new
 			@car = Car.new
+			@users = User.all
 		end
 
 

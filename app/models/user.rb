@@ -4,6 +4,10 @@ class User < ApplicationRecord
   "#{first_name} #{last_name} #{birth} #{num_siblings} #{shoe_size} #{us_citizen}"
   end
 
+  def full_name
+    "#{first_name} #{last_name}"
+  end
+
   def car_display()
     if self.car
       self.car.brand
