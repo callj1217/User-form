@@ -1,37 +1,37 @@
-<table style = "border: 1px solid black">
-	  		<tr>
+<table class="table">
+	  		<tr scope="col">
 	  		<td>Id</td>
-	  		<td style = "border: 1px solid black"><%=@user.id%></td>
+	  		<td><%=@user.id%></td>
 	  		</tr>	
 
-	  		<tr>
+	  		<tr scope="col">
 	  		<td>First Name</td>
-	  		<td style = "border: 1px solid black"><%=@user.first_name%></td>
+	  		<td><%=@user.first_name%></td>
 	  		</tr>	
 
-	  		<tr>
+	  		<tr scope="col">
 	  		<td>Last Name</td>
-	  		<td style = "border: 1px solid black"><%=@user.last_name%></td>
+	  		<td><%=@user.last_name%></td>
 	  		</tr>	
 
-	  		<tr>
+	  		<tr scope="col">
 	  		<td>Birthday</td>
-	  		<td style = "border: 1px solid black"><%=@user.birth&.strftime("%m/%d/%Y")%></td>
+	  		<td><%=@user.birth&.strftime("%m/%d/%Y")%></td>
 	  		</tr>	
 
-	  		<tr>
+	  		<tr scope="col">
 	  		<td>Shoe Size</td>
-	  		<td style = "border: 1px solid black"><%=@user.shoe_size%></td>
+	  		<td><%=@user.shoe_size%></td>
 	  		</tr>	
 
-	  		<tr>
+	  		<tr scope="col">
 	  		<td>Number of Siblings</td>
-	  		<td style = "border: 1px solid black"><%=@user.num_siblings%></td>
+	  		<td><%=@user.num_siblings%></td>
 	  		</tr>	
 
-	  		<tr>
+	  		<tr scope="col">
 	  		<td>US Citizen</td>
-	  		<td style = "border: 1px solid black"><%=@user.us_citizen%></td>
+	  		<td><%=@user.us_citizen%></td>
 	  		</tr>	
  </table>
  
