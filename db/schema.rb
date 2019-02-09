@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190112173858) do
+ActiveRecord::Schema.define(version: 20190209184045) do
 
   create_table "cars", force: :cascade do |t|
     t.string "brand"
@@ -23,6 +23,14 @@ ActiveRecord::Schema.define(version: 20190112173858) do
     t.boolean "is_eletric"
     t.datetime "date_purchased"
     t.index ["user_id"], name: "index_cars_on_user_id"
+  end
+
+  create_table "pets", force: :cascade do |t|
+    t.string "pet_name"
+    t.string "kind"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
