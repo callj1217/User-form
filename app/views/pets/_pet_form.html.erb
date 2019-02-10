@@ -1,0 +1,32 @@
+<%= form_for @pet do |f| %>
+
+    <div class="form-group">
+      <div class='col-md-3'>
+        <label>Name</label>
+      </div>
+      <div class='col-md-9'>
+        <%= f.text_field :pet_name, class: 'form-control' %><br>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class='col-md-3'>
+        <label>Type of pet</label>
+      </div>
+      <div class='col-md-9'>
+        <%= f.select :kind, ["", "dog", "cat", "bird", "snake", "fisht", "spider", "turtle"], {}, class: 'form-control' %><br>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class='col-md-3'>
+        <label>Owner of pet</label>
+      </div>
+      <div class='col-md-9'>
+        <%= f.select :user_id, @pet.owner_select_options ,  class: 'form-control' %><br>
+      </div>
+    </div>
+
+    <div class="form-group">
+        <%= f.submit "Submit", class: "btn btn-success" %><br>
+    </div>
+  <% end %>
