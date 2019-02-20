@@ -10,6 +10,12 @@
 		<th scope="col">Number of Sibilings</th>
 		<th scope="col">US Citizen</th>
 		<th scope="col">Car</th>
+		<th scope="col">Pets</th>
+		<th scope="col"></th>
+		<th scope="col"></th>
+		<th scope="col"></th>
+		<th scope="col"></th>
+		<th scope="col"></th>
 	</tr>
 	<% @users.each do |user| %>
 		<tr>
@@ -25,6 +31,15 @@
   			<% else%>
   				<td>"<%= user.first_name%>  doesn't own a car"</td>
   			<% end%>
+  			<td>
+  				<%if user.pets.any?%>
+      				<%user.pets.each do |pet|%>
+        				<%=link_to pet.pet_name, pet_path(pet)%><br>
+        			<%end%>
+	    		<%	else%>
+	     			"<%= user.first_name%>  doesn't own a pet"
+	    		<%end%>
+    		</td>
   			<td><%= link_to "Edit", edit_user_path(user), :class => "btn btn-primary"%></td>
 			<td><%= link_to "Delete", user , class: "btn btn-danger", :method => 'delete', data: {confirm: "Are you sure?"}%></td>
   		<tr>

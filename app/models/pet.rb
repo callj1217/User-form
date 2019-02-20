@@ -1,5 +1,5 @@
 class Pet < ApplicationRecord
-	belongs_to :user
+	belongs_to :user, optional: true
 	def user_display()
     if self.user
      self.user.first_name

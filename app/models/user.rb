@@ -16,6 +16,16 @@ class User < ApplicationRecord
       "Does not own a car"
     end
   end
+   def pets_display()
+    if self.pets
+      pets.each do |pet|
+        pet.pet_name
+      end
+    else
+      "Does not own pets"
+    end
+  end
+
 
   def print_yes_or_no(boolean)
     if boolean
