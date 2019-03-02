@@ -12,7 +12,7 @@
   <% @pets.each do |pet| %>
     <tr>
       <td><%= pet.id %></td>
-      <td><%= pet.pet_name %></td>
+      <td><%= link_to pet.pet_name, pet_path(pet)%></td>
         <td><%= pet.kind %></td>
        <% if pet.user%>
           <td><%= link_to pet.user.first_name, user_path(pet.user)%></td>

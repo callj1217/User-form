@@ -1,20 +1,28 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Pet name:</strong>
-  <%= @pet.pet_name %>
-</p>
+<table class="table">
 
-<p>
-  <strong>Kind:</strong>
-  <%= @pet.kind %>
-</p>
+	  		<tr scope="col">
+	  		<td>Pet Name</td>
+	  		<td><%=@pet.pet_name%></td>
+	  		</tr>	
 
-<p>
-  <strong>Owner:</strong>
-  	<%if @pet.user%>
-    	<%= link_to @pet.user.first_name, user_path(@pet.user)%>
-  	<%end%>
-</p>
-<%= link_to 'Edit', edit_pet_path(@pet) %> |
-<%= link_to 'Back', pets_path %>
+	  		<tr scope="col">
+	  		<td>Type of Pet</td>
+	  		<td><%=@pet.kind%></td>
+	  		</tr>	
+
+	  		<tr scope="col">
+	  			<td>User</td>
+	  			<td>	
+	  				<%if @pet.user%>
+    					<%= link_to @pet.user.first_name, user_path(@pet.user)%>
+    				<%else%>
+    					Does not have a owner
+  					<%end%>
+	    		<td>
+	    	</tr>
+ </table>
+ 
+
+<%= link_to "Back", users_path, :class => 'btn btn-danger' %>
+<td><%= link_to "Edit", edit_pet_path(@pet), :class => "btn btn-primary"%></td>

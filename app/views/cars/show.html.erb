@@ -1,38 +1,36 @@
-<div>
-<table style = "border: 1px solid black">
-	  		<tr>
+<table class="table">
+	  		<tr scope="col">
 	  		<td>Id</td>
-	  		<td style = "border: 1px solid black"><%=@car.id%></td>
+	  		<td><%=@car.id%></td>
 	  		</tr>	
 
-	  		<tr>
+	  		<tr scope="col">
 	  		<td>Brand</td>
-	  		<td style = "border: 1px solid black"><%=@car.brand%></td>
+	  		<td><%=@car.brand%></td>
 	  		</tr>	
 
-	  		<tr>
+	  		<tr scope="col">
 	  		<td>Model</td>
-	  		<td style = "border: 1px solid black"><%=@car.model%></td>
+	  		<td><%=@car.model%></td>
 	  		</tr>	
 
-	  		<tr>
-	  		<td>Date Purchased</td>
-	  		<td style = "border: 1px solid black"><%=@car.date_purchased&.strftime("%m/%d/%Y")%></td>
+	  		<tr scope="col">
+	  		<td>Date of Purchase</td>
+	  		<td><%=@car.date_purchased&.strftime("%m/%d/%Y")%></td>
 	  		</tr>	
 
-	  		<tr>
+	  		<tr scope="col">
 	  		<td>Engine Size</td>
-	  		<td style = "border: 1px solid black"><%=@car.engine_size%></td>
+	  		<td><%=@car.engine_size%></td>
 	  		</tr>	
 
-	  		<tr>
+	  		<tr scope="col">
 	  		<td>Number of Wheels</td>
-	  		<td style = "border: 1px solid black"><%=@car.num_wheels%></td>
+	  		<td><%=@car.num_wheels%></td>
 	  		</tr>	
 
-	  		<tr>
-	  		<td>Is Your Car Electric</td>
-	  		<td style = "border: 1px solid black"><%=@car.is_eletric%></td>
-	  		</tr>	
+	  		<tr scope="col">
+	  		<td>Electric</td>
+	  		<td><%=@car.is_eletric%></td>
+	  		</tr>
  </table>
-</div>
