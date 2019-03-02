@@ -1,8 +1,9 @@
 class User < ApplicationRecord
   has_many :pets
  has_one :car
+ validates :first_name, :last_name, presence: true 
   def user_data
-  "#{first_name} #{last_name} #{birth} #{num_siblings} #{shoe_size} #{us_citizen}"
+  "#{first_name} #{last_name} #{birth} #{shoe_size} #{us_citizen}"
   end
 
   def full_name

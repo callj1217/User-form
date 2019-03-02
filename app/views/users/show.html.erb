@@ -32,6 +32,20 @@
 	  		<tr scope="col">
 	  		<td>US Citizen</td>
 	  		<td><%=@user.us_citizen%></td>
-	  		</tr>	
+	  		</tr>
+
+
+	  		<tr scope="col">
+	  			<td>Pets</td>
+	  			<td>	
+	  				<%if @user.pets.any?%>
+      					<%@user.pets.each do |pet|%>
+        					<%=link_to pet.pet_name, pet_path(pet)%><br>
+        				<%end%>
+	    			<%else%>
+	     				"<%= @user.first_name%>  doesn't own a pet"
+	    			<%end%>
+	    		<td>
+	    	</tr>
  </table>
  
