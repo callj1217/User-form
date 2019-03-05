@@ -17,13 +17,17 @@
 
 		def create
 			@user = User.new(user_params)
-
 			if @user.save
-				redirect_to users_path
+				flash[:success] = "Created User Successfully"
+			  redirect_to users_path()
 			else
-				redirect_back(fallback_location: new_user_path)
-			end
+				flash[:danger] = "failed to create user"
+			  render 'new'
+		  end
 		end
+
+			
+	
 		def edit
 			@user = User.find (params[:id]) 
 		end
