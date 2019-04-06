@@ -1,6 +1,6 @@
 class PetsController < ApplicationController
   before_action :set_pet, only: [:show, :edit, :update, :destroy]
-
+ before_action :require_user, only: [:index, :show]
   # GET /pets
   # GET /pets.json
   def index
@@ -61,6 +61,7 @@ class PetsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

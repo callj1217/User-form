@@ -1,4 +1,5 @@
 class CarsController < ApplicationController
+ before_action :require_user, only: [:index, :show]
 
 		def index
 			@cars = Car.all

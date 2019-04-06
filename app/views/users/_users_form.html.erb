@@ -17,6 +17,7 @@
 				<%= f.text_field :last_name, class: 'form-control'%><br>
 			</div>
 		</div>
+
 		<div class="form-group">
 			<div class='col-md-3'>
 				<label>Number of Sibilings</label>
@@ -25,6 +26,7 @@
 				<%= f.number_field :num_siblings, class: 'form-control' %><br>
 			</div>
 		</div>
+
 		<div class="form-group">
 			<div class='col-md-3'>
 				<label>Shoe Size</label>
@@ -33,6 +35,7 @@
 				<%= f.number_field :shoe_size, step: 0.5, class: 'form-control' %><br>
 			</div>
 		</div>
+
 		<div class="form-group">
 			<div class='col-md-3'>
 				<label>Are you a U.S. citizen?</label>
@@ -41,6 +44,7 @@
 				<%= f.check_box :us_citizen, class: 'form-control' %><br>
 			</div>
 		</div>
+
 		<div class="form-group">
 			<div class='col-md-3'>
 				<label>Date of birth</label>
@@ -48,7 +52,26 @@
 			<div class='col-md-9'>
 				<%= f.date_field :birth, class: 'form-control' %><br>
 			</div>
+
+			<div class="form-group">
+			<div class='col-md-3'>
+				<label>Email</label>
+			</div>
+			<div class='col-md-9'>
+				<%= f.text_field :gmail, class: 'form-control' %><br>
+			</div>
 		</div>
+		</div>
+
+		<div class="form-group">
+			<div class='col-md-3'>
+				<label>Password</label>
+			</div>
+			<div class='col-md-9'>
+				<%= f.text_field :password_digest, class: 'form-control' %><br>
+			</div>
+		</div>
+
 		<div class="form-group">
 				<%= f.submit 'Submit', class: "btn btn-success" %><br>
 		</div>
