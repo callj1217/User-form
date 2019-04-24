@@ -2,7 +2,7 @@ class User < ApplicationRecord
   has_secure_password
   has_many :pets
   has_one :car
-  validates :first_name, :last_name, presence: true 
+  validates :first_name, :last_name, :gmail, presence: true 
   validates_uniqueness_of :gmail
   def user_data
     "#{first_name} #{last_name} #{birth} #{shoe_size} #{us_citizen}"
