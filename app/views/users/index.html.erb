@@ -28,6 +28,7 @@
   			<td><%= user.print_yes_or_no(user.us_citizen) %></td>
   			<% if user.car%>
   				<td><%= link_to user.car_display, car_path(user.car)%></td>
+				<td><%= link_to "Edit", edit_user_path(user), :class => "btn btn-primary"%></td>
   			<% else%>
   				<td>"<%= user.first_name%>  doesn't own a car"</td>
   			<% end%>

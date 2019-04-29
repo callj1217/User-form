@@ -13,15 +13,23 @@
     <tr>
       <td><%= pet.id %></td>
       <td><%= link_to pet.pet_name, pet_path(pet)%></td>
-        <td><%= pet.kind %></td>
-       <% if pet.user%>
-          <td><%= link_to pet.user.first_name, user_path(pet.user)%></td>
-        <% else%>
-          <td>"No owner"</td>
-        <% end%>
+      <td><%= pet.kind %></td>
+      <% if pet.user %>
+        <td><%= link_to pet.user.first_name, user_path(pet.user)%></td>
+      <% else%>
+        <td>"No owner"</td>
+      <% end%>
+        
+      <% if pet&.user&.id == current_user.id %>
         <td><%= link_to "Edit", edit_pet_path(pet), :class => "btn btn-primary"%></td>
-      <td><%= link_to "Delete", pet , class: "btn btn-danger", :method => 'delete', data: {confirm: "Are you sure?"}%></td>
-      <tr>
+        <td><%= link_to "Delete", pet , class: "btn btn-danger", :method => 'delete', data: {confirm: "Are you sure?"}%></td>
+      <% else %>
+        <td></td>
+        <td></td>
+      <% end %>
+
+
+    <tr>
   <%end%>
  </table>
  <%= link_to "New", new_pet_path, class: 'btn btn-success' %>

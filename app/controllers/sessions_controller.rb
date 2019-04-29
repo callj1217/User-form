@@ -17,15 +17,21 @@ class SessionsController < ApplicationController
   
   if @user && @user.authenticate(params[:session][:password])
     session[:user_id] = @user.id
-    redirect_to '/'
+    flash[:success] = "Login successful"
+    redirect_to users_path()
   else
+    flash[:danger] = "Login unsuccessful"
     redirect_to 'login'
   end 
 end 
 
 def destroy 
-  session[:user_id] = nil 
-  redirect_to '/' 
+  if session[:user_id] = nil 
+    flash[:success] = "logout successful"
+    redirect_to users_path()
+  else 
+    flash[:success] = "Logout successful"
+  end
 end
 
 end
