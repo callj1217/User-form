@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :pins
   root to: "sessions#new"
   get 'signup' => 'users#new'
   get 'login' => 'sessions#new'
