@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_secure_password
+  has_one_attached :image
   has_many :pets
   has_one :car
   validates :first_name, :last_name, :gmail, presence: true 

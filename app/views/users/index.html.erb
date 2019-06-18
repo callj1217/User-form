@@ -3,6 +3,8 @@
 <table class="table">
 	<tr>
 		<th scope="col">Id</th>
+
+		<th scope="col">Image</th>
 		<th scope="col">First Name</th>
 		<th scope="col">Last Name</th>
 		<th scope="col">Birthday</th>
@@ -28,7 +30,7 @@
   			<td><%= user.print_yes_or_no(user.us_citizen) %></td>
   			<% if user.car%>
   				<td><%= link_to user.car_display, car_path(user.car)%></td>
-				<td><%= link_to "Edit", edit_user_path(user), :class => "btn btn-primary"%></td>
+				
   			<% else%>
   				<td>"<%= user.first_name%>  doesn't own a car"</td>
   			<% end%>

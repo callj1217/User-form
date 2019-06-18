@@ -34,9 +34,10 @@
 
 		def update
 			@user = User.find(params[:id]) 
+			
 			if @user.update_attributes(user_params)
 				redirect_to users_path
-			else
+			else	
 				flash[:danger] = @user.errors.first
 	  			redirect_back(fallback_location: root_path)
 			end
@@ -52,7 +53,7 @@
 private
 
 		def user_params 
-			params.required(:user).permit(:first_name, :last_name, :birth, :num_siblings, :shoe_size, :us_citizen, :password, :gmail)
+			params.required(:user).permit(:first_name, :last_name, :birth, :num_siblings, :shoe_size, :us_citizen, :password, :gmail, :image)
 		end
 
 	end
