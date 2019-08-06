@@ -4,7 +4,7 @@ class PetsController < ApplicationController
   # GET /pets
   # GET /pets.json
   def index
-    @pets = Pet.all
+    @pets = Pet.where(deleted_at: nil)
   end
 
   # GET /pets/1
@@ -55,10 +55,12 @@ class PetsController < ApplicationController
   # DELETE /pets/1
   # DELETE /pets/1.json
   def destroy
-    @pet.destroy
+    @pet.deleted_at = Time.now
+    @pet.save
     respond_to do |format|
       format.html { redirect_to pets_url, notice: 'Pet was successfully destroyed.' }
       format.json { head :no_content }
+    
     end
   end
 

@@ -1,5 +1,6 @@
 class Pet < ApplicationRecord
-	belongs_to :user, optional: true
+  belongs_to :user, optional: true
+  # default_scope where{(:deleted_at => nil)}
 	def user_display()
     if self.user
      self.user.first_name
