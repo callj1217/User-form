@@ -1,0 +1,35 @@
+<h1>Movies</h1>
+
+<table class="table">
+  <tr>
+    <th scope="col">Id</th>
+    <th scope="col">Title</th>
+    <th scope="col">Rating</th>
+    <th scope="col">Date</th>
+    <th scope="col"></th>
+    <th scope="col"></th>
+  </tr>
+  <% @movie.each do |f| %>
+    <tr>
+      <td><%= f.id %></td>
+      <td><%= link_to f.f_title, f_path(f)%></td>
+      <td><%= f.rating %></td>
+      <% if f.user %>
+        <td><%= link_to f.user.first_name, user_path(f.user)%></td>
+      <% else%>
+        <td>"Does not want to be known"</td>
+      <% end%>
+        
+      <% if f&.user&.id == current_user.id %>
+        <td><%= link_to "Edit", edit_movie_path(f), :class => "btn btn-primary"%></td>
+        <td><%= link_to "Delete", movie , class: "btn btn-danger", :method => 'delete', data: {confirm: "Are you sure?"}%></td>
+      <% else %>
+        <td><%= link_to "View", movie_path(f), :class => "btn btn-primary"%></td>
+        <td></td>
+      <% end %>
+
+
+    <tr>
+  <%end%>
+ </table>
+ <%= link_to "New", new_movie_path, class: 'btn btn-success' %>
